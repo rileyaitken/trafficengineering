@@ -1,0 +1,49 @@
+
+Log started (V12.8.0.0) Thu May 10 13:07:08 2018
+
+
+Problem 'tm.lp' read.
+Read time = 0.02 sec. (0.00 ticks)
+Tried aggregator 1 time.
+LP Presolve eliminated 3 rows and 2 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+
+Dual simplex - Optimal:  Objective =  1.3400000000e+02
+Solution time =    0.01 sec.  Iterations = 0 (0)
+Deterministic time = 0.00 ticks  (0.20 ticks/sec)
+
+
+Variable Name           Solution Value
+x12                          10.000000
+x132                          7.000000
+
+Log started (V12.8.0.0) Thu May 10 16:18:41 2018
+
+
+Log started (V12.8.0.0) Thu May 10 16:19:25 2018
+
+CPLEX Error  1608: Line 4: Expected '+','-' or sense, found '/'.
+No file read.
+No problem exists.
+No problem exists.
+
+Log started (V12.8.0.0) Thu May 10 16:20:27 2018
+
+
+Problem 'dietproblem.lp' read.
+Read time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+LP Presolve eliminated 3 rows and 4 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+
+Dual simplex - Optimal:  Objective =  3.2600306003e+01
+Solution time =    0.01 sec.  Iterations = 0 (0)
+Deterministic time = 0.00 ticks  (0.34 ticks/sec)
+
+
+Variable Name           Solution Value
+x1                            2.000000
+x4                           18.000180
+All other variables in the range 1-4 are 0.
