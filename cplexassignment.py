@@ -34,12 +34,12 @@ def main(argv):
 			constraint_name = 'h' + var_names[i][1] + var_names[j][3]
 			constraint_rhs = []
 			constraint_lhs = []
-			for k in range(0, Y):
-				constraint_lhs.append(j + i + (Z * k))
-				constraint_rhs.append(1.0)
+			for k in range(0, Y): #Get all the paths/variables between i and j
+				constraint_lhs.append(j + i + (Z * k)) #Give index of variable in var_names
+				constraint_rhs.append(1.0) #Coefficients, always 1.0 in this case
 			constraint = [constraint_lhs, constraint_rhs]
-			my_senses.append('E')
-			my_rhs.append(int(var_names[i][1]) + int(var_names[j][3]))
+			my_senses.append('E') #Equality constraint between sum of all path variables between source i and dest j, and i + j
+			my_rhs.append(int(var_names[i][1]) + int(var_names[j][3])) #Set demand volume as i + j
 			print(my_senses[-1], my_rhs[-1],constraint, constraint_name)
 		
 	
