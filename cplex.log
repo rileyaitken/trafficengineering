@@ -47,3 +47,26 @@ Variable Name           Solution Value
 x1                            2.000000
 x4                           18.000180
 All other variables in the range 1-4 are 0.
+
+Log started (V12.8.0.0) Thu May 10 16:58:28 2018
+
+Warning, line 4: Characters after RHS value are ignored.
+Warning, line 5: Characters after RHS value are ignored.
+Warning, line 6: Characters after RHS value are ignored.
+
+Problem 'wireless.lp' read.
+Read time = 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+LP Presolve eliminated 3 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.00 ticks)
+
+Dual simplex - Optimal:  Objective =  0.0000000000e+00
+Solution time =    0.00 sec.  Iterations = 0 (0)
+Deterministic time = 0.00 ticks  (1.15 ticks/sec)
+
+
+Variable Name           Solution Value
+p3)                         100.000000
+p2)                         150.000000
+All other variables in the range 1-7 are 0.

@@ -35,7 +35,7 @@ def populatebyrows(prob):
 	
 	
 if __name__ == "__main__":
-	for h in frange(1.0, 19.0, 0.1):
+	for h in frange(18.8, 19.0, 0.1):
 		try:
 			my_rhs[0] = h
 			prob = cplex.Cplex()
