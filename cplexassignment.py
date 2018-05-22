@@ -47,7 +47,7 @@ def main(argv):
 		for j in range(1, Z + 1):
 			constraint_varnames = []
 			constraint_coefficients = []
-			constraint_name = 'pathUtil' + str(i) + str(j)
+			constraint_name = ['pathUtil' + str(i) + str(j)]
 			print(constraint_name)
 			for k in range(1, Y + 1):
 				variable = 'U' + str(i) + str(k) + str(j)
@@ -55,11 +55,29 @@ def main(argv):
 				constraint_varnames.append(variable)
 				constraint_coefficients.append(1.0)
 			constraint = [constraint_varnames, constraint_coefficients]
-			my_sense = ['E']
+			my_sense = "E"
 			my_rhs = [3.0]
-			print(my_sense, my_rhs, constraint, constraint_name)
-			c.linear_constraints.add(lin_expr = constraint, senses = my_sense, rhs = my_rhs, names = constraint_name)
+			c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)
 		
+
+    #introduce auxillary variables - flowijk - flowIfPathUsed  
+
+    #introduce auxillary variable which is the equivalent of hij * 
+
+    for i in range(1, X + 1):
+        for j in range(1, Z + 1):
+            for k in range(1, Y + 1):
+                constraint_varnames = []
+                constraint_coefficients = []
+                constraint_name = ['split3wayx' + str(i) + str(k) + str(j)]
+                print(constraint_name)
+                constraint_varnames.append('x' + str(i) + str(k) + str(j), 'h' + str(i) + str(j), 'U' + str(i) + str(k) + str(j))
+                constraint_coefficients.append(1.0, )
+                constraint = [constraint_varnames, constraint_coefficients]
+                my_sense = "E"
+                      
+    
+    
 	
 def populatebyrows(prob):
 	prob.objective.set_sense(prob.objective.sense.minimize)
