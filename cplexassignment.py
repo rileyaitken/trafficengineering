@@ -10,6 +10,8 @@ sources = []
 transits = []
 dests = []
 
+
+		
 def main(argv):
 	
 	try:
@@ -19,6 +21,13 @@ def main(argv):
 		print(X, Y, Z)
 	except IndexError as e:
 		print(e)
+		
+	sum_volumes = 0
+	for i in range(1, X + 1):
+		for j in range(1, Z + 1):
+			sum_volumes += i + j
+		
+	print(sum_volumes)	
 		
 	c = cplex.Cplex()
 		
@@ -58,44 +67,95 @@ def main(argv):
 			my_rhs = [3.0]
 			print(my_sense, my_rhs, constraint, constraint_name)
 			c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)
-		
+
+	#for i in range(1, X + 1):
+		#for j in range(1, Z + 1):
+			#for k in range(1, Y + 1):
+				#constraint_name = ['linkUsed' + str(i) + str(k)]
+				#variable = 'link' + str(i) + str(j) + str(i) + str(k) + str(j) + str(i) + str(k)
+				#c.variables.add(names = [variable], obj = [1.0], lb = [0.0], ub = [cplex.infinity], types = [c.variables.type.binary])
+				#pathUtil = 'U' + str(i) + str(j) + str(i) + str(k) + str(j)
+				#constraint_varnames = [variable, pathUtil]
+				#constraint_coefficients = [1.0, -1.0]
+				#constraint = [constraint_varnames, constraint_coefficients]
+				#my_sense = "E"
+				#my_rhs = [0]
+				#c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)
+				#constraint_varnames = []
+				#constraint_coefficients = []
+				#constraint_name = ['linkUsed' + str(k) + str(j)]
+				#variable = 'link' + str(i) + str(j) + str(i) + str(k) + str(j) + str(k) + str(j)
+				#c.variables.add(names = [variable], obj = [1.0], lb = [0.0], ub = [cplex.infinity], types = [c.variables.type.binary])
+				#pathUtil = 'U' + str(i) + str(j) + str(i) + str(k) + str(j)
+				#constraint_varnames = [variable, pathUtil]
+				#constraint_coefficients = [1.0, -1.0]
+				#constraint = [constraint_varnames, constraint_coefficients]
+				#my_sense = "E"
+				#my_rhs = [0]
+				#c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)
 
 	for i in range(1, X + 1):
 		for j in range(1, Z + 1):
 			for k in range(1, Y + 1):
-				constraint_name = ['linkUsed' + str(i) + str(k)]
-				variable = 'link' + str(i) + str(j) + str(i) + str(k) + str(j) + str(i) + str(k)
-				c.variables.add(names = [variable], obj = [1.0], lb = [0.0], ub = [cplex.infinity], types = [c.variables.type.binary])
+				constraint_name = ['splith' + str(i) + str(j)]
+				splith = (i + j) / 3
 				pathUtil = 'U' + str(i) + str(j) + str(i) + str(k) + str(j)
-				constraint_varnames = [variable, pathUtil]
-				constraint_coefficients = [1.0, -1.0]
+				pathFlow = 'x' + str(i) + str(k) + str(j)
+				constraint_varnames = [pathUtil, pathFlow]
+				constraint_coefficients = [splith, -1.0]
 				constraint = [constraint_varnames, constraint_coefficients]
 				my_sense = "E"
 				my_rhs = [0]
+				print(my_sense, my_rhs, constraint, constraint_name)
 				c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)
 				
-				constraint_varnames = []
-				constraint_coefficients = []
-				constraint_name = ['linkUsed' + str(k) + str(j)]
-				variable = 'link' + str(i) + str(j) + str(i) + str(k) + str(j) + str(k) + str(j)
-				c.variables.add(names = [variable], obj = [1.0], lb = [0.0], ub = [cplex.infinity], types = [c.variables.type.binary])
-				pathUtil = 'U' + str(i) + str(j) + str(i) + str(k) + str(j)
-				constraint_varnames = [variable, pathUtil]
-				constraint_coefficients = [1.0, -1.0]
-				constraint = [constraint_varnames, constraint_coefficients]
-				my_sense = "E"
-				my_rhs = [0]
-				c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)
-		
-    #introduce auxillary variables - flowijk - flowIfPathUsed  
+	for i in range(1, X + 1):
+		for k in range(1, Y + 1):
+			constraint_name = ['capacC' + str(i) + str(k)]
+			print(constraint_name)
+			variable = 'c' + str(i) + str(k)
+			c.variables.add(names = [variable], obj = [1.0], lb = [0.0], ub = [cplex.infinity])
+			constraint_varnames = []
+			constraint_coefficients = []
+			for j in range(1, Z + 1):
+				constraint_varnames.append('x' + str(i) + str(k) + str(j))
+				constraint_coefficients.append(1.0)
+			constraint_varnames.append(variable)
+			constraint_coefficients.append(-1.0)
+			constraint = [constraint_varnames, constraint_coefficients]
+			my_sense = "E"
+			my_rhs = [0.0]
+			print(my_sense, my_rhs, constraint, constraint_name)
+			c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)
+			
+	for k in range(1, Y + 1):
+		for j in range(1, Z + 1):
+			constraint_name = ['capacC' + str(k) + str(j)]
+			print(constraint_name)
+			variable = 'd' + str(k) + str(j)
+			c.variables.add(names = [variable], obj = [1.0], lb = [0.0], ub = [cplex.infinity])
+			constraint_varnames = []
+			constraint_coefficients = []
+			for i in range(1, X + 1):
+				constraint_varnames.append('x' + str(i) + str(k) + str(j))
+				constraint_coefficients.append(1.0)
+			constraint_varnames.append(variable)
+			constraint_coefficients.append(-1.0)
+			constraint = [constraint_varnames, constraint_coefficients]
+			my_sense = "E"
+			my_rhs = [0.0]
+			print(my_sense, my_rhs, constraint, constraint_name)
+			c.linear_constraints.add(lin_expr = [constraint], senses = my_sense, rhs = my_rhs, names = constraint_name)	
+			
+			
+			
+			
 
-    #introduce auxillary variable which is the equivalent of hij * 
+				
+
 
     
-                      
-    
-    
-	
+
 def populatebyrows(prob):
 	prob.objective.set_sense(prob.objective.sense.minimize)
 	
