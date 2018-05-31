@@ -70,3 +70,385 @@ Variable Name           Solution Value
 p3)                         100.000000
 p2)                         150.000000
 All other variables in the range 1-7 are 0.
+
+Log started (V12.8.0.0) Thu May 31 13:53:15 2018
+
+Row 'splith11' repeats.
+Row 'splith11' repeats.
+Row 'splith12' repeats.
+Row 'splith12' repeats.
+Row 'splith13' repeats.
+13 repeated row warnings not printed.
+
+Problem 'instance333.lp' read.
+Read time = 0.02 sec. (0.01 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 69 rows and 76 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.05 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.01 sec. (0.06 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.01 sec. (0.06 ticks)
+
+Solution pool: 1 solution saved.
+
+MIP - Integer optimal solution:  Objective =  3.3333333333e-01
+Solution time =    0.01 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.06 ticks  (4.36 ticks/sec)
+
+
+Incumbent solution
+Variable Name           Solution Value
+r                             0.333333
+x111                          0.666667
+x121                          0.666667
+x131                          0.666667
+x112                          1.000000
+x122                          1.000000
+x132                          1.000000
+x113                          1.333333
+x123                          1.333333
+x133                          1.333333
+x211                          1.000000
+x221                          1.000000
+x231                          1.000000
+x212                          1.333333
+x222                          1.333333
+x232                          1.333333
+x213                          1.666667
+x223                          1.666667
+x233                          1.666667
+x311                          1.333333
+x321                          1.333333
+x331                          1.333333
+x312                          1.666667
+x322                          1.666667
+x332                          1.666667
+x313                          2.000000
+x323                          2.000000
+x333                          2.000000
+U11111                        1.000000
+U11121                        1.000000
+U11131                        1.000000
+U12112                        1.000000
+U12122                        1.000000
+U12132                        1.000000
+U13113                        1.000000
+U13123                        1.000000
+U13133                        1.000000
+U21211                        1.000000
+U21221                        1.000000
+U21231                        1.000000
+U22212                        1.000000
+U22222                        1.000000
+U22232                        1.000000
+U23213                        1.000000
+U23223                        1.000000
+U23233                        1.000000
+U31311                        1.000000
+U31321                        1.000000
+U31331                        1.000000
+U32312                        1.000000
+U32322                        1.000000
+U32332                        1.000000
+U33313                        1.000000
+U33323                        1.000000
+U33333                        1.000000
+c11                           3.000000
+c12                           3.000000
+c13                           3.000000
+c21                           4.000000
+c22                           4.000000
+c23                           4.000000
+c31                           5.000000
+c32                           5.000000
+c33                           5.000000
+d11                           3.000000
+d12                           4.000000
+d13                           5.000000
+d21                           3.000000
+d22                           4.000000
+d23                           5.000000
+d31                           3.000000
+d32                           4.000000
+d33                           5.000000
+loadk1                       12.000000
+loadk2                       12.000000
+loadk3                       12.000000
+
+Log started (V12.8.0.0) Thu May 31 13:54:48 2018
+
+Row 'splith11' repeats.
+Row 'splith11' repeats.
+Row 'splith11' repeats.
+Row 'splith11' repeats.
+Row 'splith12' repeats.
+95 repeated row warnings not printed.
+
+Problem 'instance555.lp' read.
+Read time = 0.00 sec. (0.03 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 75 rows and 50 columns.
+MIP Presolve modified 23 coefficients.
+Aggregator did 130 substitutions.
+Reduced MIP has 30 rows, 126 columns, and 255 nonzeros.
+Reduced MIP has 125 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.51 ticks)
+Found incumbent of value 0.333333 after 0.00 sec. (0.60 ticks)
+Probing time = 0.00 sec. (0.05 ticks)
+Cover probing fixed 0 vars, tightened 5 bounds.
+Tried aggregator 1 time.
+Reduced MIP has 30 rows, 126 columns, and 255 nonzeros.
+Reduced MIP has 125 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.22 ticks)
+Probing time = 0.00 sec. (0.02 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.00 sec. (0.31 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0.3333        0.0222            93.33%
+      0     0        0.2000     7        0.3333        0.2000       84   40.00%
+*     0+    0                            0.2067        0.2000             3.23%
+      0     0        0.2000     5        0.2067       Cuts: 2       86    3.23%
+*     0+    0                            0.2044        0.2000             2.17%
+      0     0        0.2000    14        0.2044       Cuts: 4       93    2.17%
+      0     0        0.2000    11        0.2044       Cuts: 4      102    2.17%
+      0     0        0.2000    10        0.2044   ZeroHalf: 2      108    2.17%
+*     0+    0                            0.2000        0.2000             0.00%
+      0     0        cutoff              0.2000        0.2000      108    0.00%
+Elapsed time = 0.14 sec. (8.94 ticks, tree = 0.01 MB, solutions = 4)
+
+Root node processing (before b&c):
+  Real time             =    0.14 sec. (8.96 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.14 sec. (8.96 ticks)
+
+Solution pool: 4 solutions saved.
+
+MIP - Integer optimal solution:  Objective =  2.0000000000e-01
+Solution time =    0.14 sec.  Iterations = 108  Nodes = 0
+Deterministic time = 8.96 ticks  (61.91 ticks/sec)
+
+
+Incumbent solution
+Variable Name           Solution Value
+r                             0.200000
+x111                          0.666667
+x121                          0.666667
+x151                          0.666667
+x112                          1.000000
+x122                          1.000000
+x142                          1.000000
+x123                          1.333333
+x143                          1.333333
+x153                          1.333333
+x124                          1.666667
+x144                          1.666667
+x154                          1.666667
+x115                          2.000000
+x135                          2.000000
+x155                          2.000000
+x211                          1.000000
+x221                          1.000000
+x251                          1.000000
+x222                          1.333333
+x242                          1.333333
+x252                          1.333333
+x223                          1.666667
+x243                          1.666667
+x253                          1.666667
+x234                          2.000000
+x244                          2.000000
+x254                          2.000000
+x215                          2.333333
+x235                          2.333333
+x245                          2.333333
+x311                          1.333333
+x321                          1.333333
+x351                          1.333333
+x322                          1.666667
+x342                          1.666667
+x352                          1.666667
+x323                          2.000000
+x333                          2.000000
+x353                          2.000000
+x314                          2.333333
+x334                          2.333333
+x354                          2.333333
+x335                          2.666667
+x345                          2.666667
+x355                          2.666667
+x421                          1.666667
+x441                          1.666667
+x451                          1.666667
+x422                          2.000000
+x442                          2.000000
+x452                          2.000000
+x413                          2.333333
+x423                          2.333333
+x433                          2.333333
+x414                          2.666667
+x434                          2.666667
+x444                          2.666667
+x415                          3.000000
+x425                          3.000000
+x435                          3.000000
+x521                          2.000000
+x541                          2.000000
+x551                          2.000000
+x512                          2.333333
+x522                          2.333333
+x532                          2.333333
+x513                          2.666667
+x543                          2.666667
+x553                          2.666667
+x514                          3.000000
+x524                          3.000000
+x534                          3.000000
+x515                          3.333333
+x535                          3.333333
+x545                          3.333333
+U11111                        1.000000
+U11121                        1.000000
+U11151                        1.000000
+U12112                        1.000000
+U12122                        1.000000
+U12142                        1.000000
+U13123                        1.000000
+U13143                        1.000000
+U13153                        1.000000
+U14124                        1.000000
+U14144                        1.000000
+U14154                        1.000000
+U15115                        1.000000
+U15135                        1.000000
+U15155                        1.000000
+U21211                        1.000000
+U21221                        1.000000
+U21251                        1.000000
+U22222                        1.000000
+U22242                        1.000000
+U22252                        1.000000
+U23223                        1.000000
+U23243                        1.000000
+U23253                        1.000000
+U24234                        1.000000
+U24244                        1.000000
+U24254                        1.000000
+U25215                        1.000000
+U25235                        1.000000
+U25245                        1.000000
+U31311                        1.000000
+U31321                        1.000000
+U31351                        1.000000
+U32322                        1.000000
+U32342                        1.000000
+U32352                        1.000000
+U33323                        1.000000
+U33333                        1.000000
+U33353                        1.000000
+U34314                        1.000000
+U34334                        1.000000
+U34354                        1.000000
+U35335                        1.000000
+U35345                        1.000000
+U35355                        1.000000
+U41421                        1.000000
+U41441                        1.000000
+U41451                        1.000000
+U42422                        1.000000
+U42442                        1.000000
+U42452                        1.000000
+U43413                        1.000000
+U43423                        1.000000
+U43433                        1.000000
+U44414                        1.000000
+U44434                        1.000000
+U44444                        1.000000
+U45415                        1.000000
+U45425                        1.000000
+U45435                        1.000000
+U51521                        1.000000
+U51541                        1.000000
+U51551                        1.000000
+U52512                        1.000000
+U52522                        1.000000
+U52532                        1.000000
+U53513                        1.000000
+U53543                        1.000000
+U53553                        1.000000
+U54514                        1.000000
+U54524                        1.000000
+U54534                        1.000000
+U55515                        1.000000
+U55535                        1.000000
+U55545                        1.000000
+c11                           3.666667
+c12                           4.666667
+c13                           2.000000
+c14                           4.000000
+c15                           5.666667
+c21                           3.333333
+c22                           4.000000
+c23                           4.333333
+c24                           7.333333
+c25                           6.000000
+c31                           3.666667
+c32                           5.000000
+c33                           7.000000
+c34                           4.333333
+c35                          10.000000
+c41                           8.000000
+c42                           9.000000
+c43                           8.000000
+c44                           6.333333
+c45                           3.666667
+c51                          11.333333
+c52                           7.333333
+c53                           8.666667
+c54                           8.000000
+c55                           4.666667
+d11                           3.000000
+d12                           3.333333
+d13                           5.000000
+d14                           8.000000
+d15                          10.666667
+d21                           6.666667
+d22                           8.333333
+d23                           7.333333
+d24                           4.666667
+d25                           3.000000
+d32                           2.333333
+d33                           4.333333
+d34                          10.000000
+d35                          13.333333
+d41                           3.666667
+d42                           6.000000
+d43                           5.666667
+d44                           6.333333
+d45                           8.333333
+d51                           6.666667
+d52                           5.000000
+d53                           7.666667
+d54                           6.000000
+d55                           4.666667
+loadk1                       30.000000
+loadk2                       30.000000
+loadk3                       30.000000
+loadk4                       30.000000
+loadk5                       30.000000
+All other variables in the range 1-306 are 0.
